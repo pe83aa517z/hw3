@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+    <title>Ideal</title>
+</head>
+<body bgcolor='FFFFCC'>
+	<font size=4><div align='right'><a href='/logout'>logout</a></div></font>
+	<table border=0 bgcolor='##48d1cc'>
+		{% for data in list %}
+			<tr>
+				<th> account= {{ data[0] }}</th>			
+			</tr>
+			<tr>
+				<th>{{ data[1] }}</th>
+			</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>

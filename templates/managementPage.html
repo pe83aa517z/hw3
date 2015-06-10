@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <title>Ideal</title>
+</head>
+<body bgcolor='FFFFCC'>
+	<font size=4><div align='right'><a href='/logout'>logout</a></div></font>
+	<center>
+		<table border=0 bgcolor='EEEEEE'>
+			<tr>
+				<form action='/managementPage' method='POST'>
+					<th>who <input type='text' name='name' /></th>
+					<th>&nbsp;age <input size='2' type='text' name='ageLow' /></th>
+					<th>- <input size='2' type='text' name='ageHigh' /></th>	
+					<th>&nbsp;pay <input size='2' type='text' name='payLow' /></th>
+					<th>- <input size='2' type='text' name='payHigh' /></th>
+					<th><input type='submit' value='search' /></th>
+				</from>
+			</tr>
+			<tr>
+				<table border=0 bgcolor='##48d1cc'>
+					<br/>
+					{% if isShow is defined %}	
+						<tr>
+							
+							<th>&nbsp;account&nbsp;</th>	
+							<th>&nbsp;&nbsp;name&nbsp;&nbsp;</th>
+							<th>&nbsp;&nbsp;sex&nbsp;&nbsp;</th>
+							<th>&nbsp;&nbsp;age&nbsp;&nbsp;</th>
+							<th>&nbsp;&nbsp;pay&nbsp;&nbsp;</th>
+							<th>&nbsp;introduction&nbsp;</th>
+							<th>&nbsp;authority&nbsp;</th>
+						</tr>
+					{% endif %}
+					{% for manpower in info %}
+						<tr>
+							{% set outer_loop = loop %}
+							<form action='/managementPage' method='POST'>
+							{% for data in manpower %}
+								{% if loop.index == 1 %}
+									<th><input type='text' size='7' name='{{'info'~outer_loop.index + '_'~loop.index }}' value={{ data }} readOnly='true' ></th>
+								{% else %}
+									<th><input type='text' size='7' name='{{'info'~outer_loop.index + '_'~loop.index }}' value={{ data }} ></th>
+								{% endif %}
+							{% endfor %}
+							<th><input type='submit' name='{{'submit'~loop.index}}' value='edit' /></th>
+							</form>
+						</tr>
+					{% endfor %}
+				</table>
+			</tr>
+		</table>
+	</center>
+</body>
+</html>
+	

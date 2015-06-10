@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    <title>Ideal</title>
+</head>
+<body bgcolor='FFFFCC'>
+	<font size=4><div align='right'><a href='logout'>logout</a></div></font>
+	<center>
+		<form action='/home' method='POST'>
+		<table border=0 bgcolor='DDDDDD'>
+			<table border=0 bgcolor='EEEEEE'>
+				<tr>
+					<th>name</th>
+					<th><input type='text' name='name' value={{ info[0] }} ></th>
+				</tr>
+				<tr>
+					<th>sex</th>
+					<th><input type='text' name='sex' value={{ info[1] }} ></th>
+				</tr>
+				<tr>
+					<th>age</th>
+					<th><input type='text' name='age' value={{ info[2] }} ></th>
+				</tr>
+				<tr>
+					<th>pay</th>
+					<th><input type='text' name='pay' value={{ info[3] }} ></th>
+				</tr>
+				<tr>
+					<th>introduction</th>
+					<th><input type='text' name='introduction' value={{ info[4] }}  ></th>
+				</tr>
+			</table>
+				<tr>
+					<th><input type='submit' value='ok' /></th>
+				<tr>
+		</table>
+	</center>
+
+</body>
+</html>
